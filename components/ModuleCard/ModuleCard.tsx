@@ -1,6 +1,5 @@
 import { Module } from '../../types/Module';
 
-
 interface Props {
   module: Module;
 }

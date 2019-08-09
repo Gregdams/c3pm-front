@@ -21,7 +21,8 @@
 
   "plugins": [
     // It is a React application
-    "react"
+    "react",
+    "eslint-plugin-import-order-alphabetical"
   ],
 
   "rules": {
@@ -40,6 +41,18 @@
         ]
       }
     ],
+
+    // TODO: find why the --fix crash with this
+    "import-order-alphabetical/order": "error",
+
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/prefer-default-export": "off",
 
     // Three rules for the curly braces and the new lines
     "curly": ["error", "multi"],
@@ -80,6 +93,8 @@
     // We are using Next so no need to import React
     "react/react-in-jsx-scope": ["off"],
 
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }]
+
     // Let us do what we want with destructuring
     // This is a rule we might add in the future in order to
     // be more uniform with how we use the props
@@ -102,7 +117,7 @@
     // But not when setting a tag attribute
     // TODO: I don't remember what this is
     // "react/jsx-curly-spacing": ["error",
-    //   { 
+    //   {
     //     "when": "always",
     //     "attributes": false,
     //     "children": true

@@ -1,6 +1,5 @@
 import HeaderElement from './HeaderElement';
 
-
 const Header = (): JSX.Element => (
   <>
     <div className="p2 white bg-black stylish-box">

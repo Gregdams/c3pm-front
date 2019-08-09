@@ -44,7 +44,6 @@
 
     // TODO: find why the --fix crash with this
     "import-order-alphabetical/order": "error",
-
     "import/order": [
       "error",
       {

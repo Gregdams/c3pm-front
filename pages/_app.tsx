@@ -1,4 +1,5 @@
 import App, { Container } from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 
 // Files imported here are available globally so it looks at this is
@@ -20,6 +21,7 @@ class MyApp extends App {
 
     return (
       <Container>
+        <Head><title>c3pm</title></Head>
         <Component {...pageProps} />
       </Container>
     );

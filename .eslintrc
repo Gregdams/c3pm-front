@@ -1,0 +1,112 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        // All the file extensions we can lint on
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "extends": [
+    // The standard stuff for TS
+    "plugin:@typescript-eslint/recommended",
+    // Our starting point is the AirBnb configuration
+    "airbnb"
+  ],
+
+  "plugins": [
+    // It is a React application
+    "react"
+  ],
+
+  "rules": {
+    // Single quotes
+    "quotes": [
+      "error",
+      "single"
+    ],
+
+    // Allow .jsx and .tsx
+    "react/jsx-filename-extension": [
+      "error", {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+
+    // Three rules for the curly braces and the new lines
+    "curly": ["error", "multi"],
+    "object-curly-newline": ["off"],
+    "nonblock-statement-body-position": ["error", "below"],
+    "operator-linebreak": [2, "before"],
+
+    // Indent JS at 2
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+
+    // Destructuring whenever possible
+    "prefer-destructuring": ["warn"],
+
+    // We don't want the extra parentheses around arrow functions
+    "arrow-parens": "off",
+
+    // We don't want to skip lines between class members
+    "lines-between-class-members": ["off"],
+
+    // Indent TS at 2
+    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
+
+    // We don't care about member accessibility, the defaults are good
+    "@typescript-eslint/explicit-member-accessibility": ["off"],
+
+    // Explicit return types are mandatory in the declarations,
+    // not in the expressions
+    // TODO: We are experimenting without it now
+    // "@typescript-eslint/explicit-function-return-type": [
+    //   "error", {
+    //     "allowExpressions": ["true"]
+    //   }
+    // ],
+
+    // Allow things like <App><Hello /></App>
+    "react/jsx-one-expression-per-line": ["off"],
+
+    // We are using Next so no need to import React
+    "react/react-in-jsx-scope": ["off"],
+
+    // Let us do what we want with destructuring
+    // This is a rule we might add in the future in order to
+    // be more uniform with how we use the props
+    // TODO: We are experimenting without it now
+    // "react/destructuring-assignment": ["off"],
+
+    // These are about accessibility and we should incorporate
+    // them again at some point
+    // TODO: We are experimenting without it now
+    // "jsx-a11y/anchor-is-valid": ["off"],
+    // "jsx-a11y/accessible-emoji": ["off"],
+    // "jsx-a11y/click-events-have-key-events": ["off"],
+    // "jsx-a11y/no-static-element-interactions": ["off"],
+
+    // Allow export without export default
+    // TODO: This is required for types only files
+    // "import/prefer-default-export": ["off"],
+
+    // Require curly spaces when dealing with an object in JSX
+    // But not when setting a tag attribute
+    // TODO: I don't remember what this is
+    // "react/jsx-curly-spacing": ["error",
+    //   { 
+    //     "when": "always",
+    //     "attributes": false,
+    //     "children": true
+    //   }
+    // ]
+  }
+}

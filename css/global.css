@@ -1,0 +1,16 @@
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #004e98;
+}
+
+.stylish-box {
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}

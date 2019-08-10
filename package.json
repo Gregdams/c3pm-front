@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext tsx --ignore-path .gitignore",
+    "lint": "eslint . --ext tsx,ts --ignore-path .gitignore",
     "lint:css": "stylelint './**/*.tsx'"
   },
   "keywords": [],

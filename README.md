@@ -1,4 +1,4 @@
-# c3pm backend
+# c3pm frontend
 
 c3pm is packet manager for C++, based on modules. Please [see here]() for
 more information.

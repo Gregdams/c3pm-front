@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext tsx,ts --ignore-path .gitignore",
+    "lint:css": "stylelint './**/*.tsx'"
   },
   "keywords": [],
   "author": "",
@@ -15,19 +17,26 @@
     "@zeit/next-css": "^1.0.1",
     "next": "^9.0.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "^12.7.1",
     "@types/react": "^16.8.25",
     "@types/react-dom": "^16.8.5",
+    "@types/styled-components": "^4.1.18",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import-order-alphabetical": "0.0.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0",
     "typescript": "^3.5.3"
   }
 }

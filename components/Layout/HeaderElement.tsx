@@ -14,7 +14,7 @@ const HeaderElement = ({ name, active }: Props): JSX.Element => (
         color: 'white',
       }}
     >
-      {name}
+      { name }
     </a>
   </li>
 );

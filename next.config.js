@@ -1,8 +1,5 @@
-/* eslint-disable */
+const withCSS = require('@zeit/next-css');
 
-const withCSS = require('@zeit/next-css')
-
-
-const nextConfig = {}
+const nextConfig = {};
 
 module.exports = withCSS(nextConfig);

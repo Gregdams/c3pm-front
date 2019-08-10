@@ -1,5 +1,6 @@
-import React from 'react';
 import App, { Container } from 'next/app';
+import Head from 'next/head';
+import React from 'react';
 
 // Files imported here are available globally so it looks at this is
 // a great location for our CSS framework
@@ -14,13 +15,13 @@ import '../css/fonts.css';
 // without any condition
 import '../css/global.css';
 
-
 class MyApp extends App {
   render = (): JSX.Element => {
     const { Component, pageProps } = this.props;
 
     return (
       <Container>
+        <Head><title>c3pm</title></Head>
         <Component {...pageProps} />
       </Container>
     );

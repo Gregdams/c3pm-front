@@ -3,91 +3,144 @@
     "import/resolver": {
       "node": {
         // All the file extensions we can lint on
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     }
   },
-
   "env": {
     "browser": true
   },
-
   "extends": [
     // The standard stuff for TS
     "plugin:@typescript-eslint/recommended",
     // Our starting point is the AirBnb configuration
     "airbnb"
   ],
-
   "plugins": [
     // It is a React application
     "react",
     "eslint-plugin-import-order-alphabetical"
   ],
-
   "rules": {
     // Single quotes
     "quotes": [
       "error",
       "single"
     ],
-
     // Allow .jsx and .tsx
     "react/jsx-filename-extension": [
-      "error", {
+      "error",
+      {
         "extensions": [
           ".jsx",
           ".tsx"
         ]
       }
     ],
-
     // TODO: find why the --fix crash with this
     "import-order-alphabetical/order": "error",
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index"
+        ],
         "newlines-between": "always"
       }
     ],
-
     // Three rules for the curly braces and the new lines
-    "curly": ["error", "multi"],
-    "object-curly-newline": ["off"],
-    "nonblock-statement-body-position": ["error", "below"],
-    "operator-linebreak": [2, "before"],
-
+    "curly": [
+      "error",
+      "multi"
+    ],
+    "object-curly-newline": [
+      "off"
+    ],
+    "nonblock-statement-body-position": [
+      "error",
+      "below"
+    ],
+    "operator-linebreak": [
+      2,
+      "before"
+    ],
     // Indent JS at 2
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
     // Destructuring whenever possible
-    "prefer-destructuring": ["warn"],
-
+    "prefer-destructuring": [
+      "warn"
+    ],
     // We don't want the extra parentheses around arrow functions
     "arrow-parens": "off",
-
+    // Forbid style elements and inline styles
+    "react/forbid-elements": [
+      1,
+      {
+        "forbid": [
+          "style"
+        ]
+      }
+    ],
+    "react/forbid-component-props": [
+      1,
+      {
+        "forbid": [
+          "style"
+        ]
+      }
+    ],
     // We don't want to skip lines between class members
-    "lines-between-class-members": ["off"],
-
+    "lines-between-class-members": [
+      "off"
+    ],
     // Indent TS at 2
-    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
-
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
     // We don't care about member accessibility, the defaults are good
-    "@typescript-eslint/explicit-member-accessibility": ["off"],
-
+    "@typescript-eslint/explicit-member-accessibility": [
+      "off"
+    ],
     // Allow things like <App><Hello /></App>
-    "react/jsx-one-expression-per-line": ["off"],
-
+    "react/jsx-one-expression-per-line": [
+      "off"
+    ],
     // We are using Next so no need to import React
-    "react/react-in-jsx-scope": ["off"],
-
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
-
+    "react/react-in-jsx-scope": [
+      "off"
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
     // Allow export without export default
     // This is required for types only files
-    "import/prefer-default-export": ["off"],
-
+    "import/prefer-default-export": [
+      "off"
+    ],
     // Require curly spaces when dealing with an object in JSX
     // But not when setting a tag attribute
     "react/jsx-curly-spacing": [
@@ -97,6 +150,10 @@
         "attributes": false,
         "children": true
       }
-    ]
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
   }
 }

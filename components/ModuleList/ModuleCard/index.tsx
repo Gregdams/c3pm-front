@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-import { Module } from '../../types/Module';
+import { Module } from '../../../types/Module';
+
+import Tag from './Tag';
 
 interface Props {
   module: Module;
@@ -22,6 +24,11 @@ const ModuleCard = ({ module }: Props): JSX.Element => (
     </BigTitle>
 
     <p className="m0 mt3">{ module.description }</p>
+    <br />
+
+    <Tag name="templates" />
+    <Tag name="metaprogramming" />
+    <Tag name="beta" />
   </Box>
 );
 

@@ -59,8 +59,7 @@
     ],
     // Three rules for the curly braces and the new lines
     "curly": [
-      "error",
-      "multi"
+      "error"
     ],
     "object-curly-newline": [
       "off"

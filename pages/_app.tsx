@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 
@@ -20,10 +20,10 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <Head><title>c3pm</title></Head>
         <Component {...pageProps} />
-      </Container>
+      </>
     );
   }
 }

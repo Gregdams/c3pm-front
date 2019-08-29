@@ -1,10 +1,13 @@
-import { useEffect, useContext } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+import { useContext, useEffect } from 'react';
 
 import BigSearch from '../components/BigSearch';
 import Layout from '../components/Layout';
 import ModuleList from '../components/ModuleList';
 import { PATHS } from '../constants/Paths';
 import globalValue, { GlobalContextProvider } from '../contexts/Global';
+import withApolloClient from '../hoc/withApollo/with-apollo-client';
 import { Module } from '../types/Module';
 
 const exampleModule = {
@@ -23,10 +26,43 @@ const exampleModules: Module[] = [
 /* eslint-disable no-console */
 const handleSearch = (s: string): void => console.log(s);
 
+/*
+  Apollo - gql query example
+ */
+const GET_ALL_USERS = gql`
+    query allPosts($first: Int!, $skip: Int!) {
+    allPosts(orderBy: createdAt_DESC, first: $first, skip: $skip) {
+      id
+      title
+      votes
+      url
+      createdAt
+    }
+    _allPostsMeta {
+      count
+    }
+  }
+    `;
+
 const Modules = (): JSX.Element => {
   const global = useContext(globalValue);
+  const { loading, error, data } = useQuery(GET_ALL_USERS,
+    {
+      variables: {
+        skip: 0,
+        first: 10,
+      },
+    });
 
   useEffect((): void => global.setActivePath(PATHS.MODULES));
+
+  if (error) {
+    console.error('gql error');
+  } else if (loading) {
+    console.log('gql loading...');
+  } else {
+    console.log(data);
+  }
 
   return (
     <Layout>
@@ -45,4 +81,4 @@ const Index = (): JSX.Element => (
   </GlobalContextProvider>
 );
 
-export default Index;
+export default withApolloClient(Index);

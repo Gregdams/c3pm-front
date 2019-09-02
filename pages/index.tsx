@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import ModuleList from '../components/ModuleList';
 import { PATHS } from '../constants/Paths';
 import globalValue, { GlobalContextProvider } from '../contexts/Global';
-import withApolloClient from '../hoc/withApollo/with-apollo-client';
+import withApolloClient from '../hoc/withApollo';
 import { Module } from '../types/Module';
 
 const exampleModule = {

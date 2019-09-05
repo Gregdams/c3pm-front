@@ -4,7 +4,7 @@ import React from 'react';
 
 // Files imported here are available globally so it looks at this is
 // a great location for our CSS framework
-import '../css/basscss.min.css';
+import 'basscss/css/basscss.min.css';
 import '../css/basscss-color.css';
 import '../css/basscss-background-color.css';
 
